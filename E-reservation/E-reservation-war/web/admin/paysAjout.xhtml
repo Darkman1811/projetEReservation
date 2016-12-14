@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>TODO write content</div>
+         <ui:composition template="./admin.xhtml">
+            <ui:define name="content">
+                Ajouter Pays:
+            <h:form>
+                <h:panelGrid columns="2"  >
+                    
+                    <h:outputLabel value="Nom du pays:"/>
+                    <h:inputText value="#{paysMB.pays.nom_pays}" id="nomPays"/>
+                                 
+                    <h:outputLabel value="Indicatif Téléphonique:"/>
+                    <h:inputText value="#{paysMB.pays.indicatif_telephonique}" id="indicatif"/>
+                                 
+                    <h:outputLabel value="Monaie:"/>
+                    <h:inputText value="#{paysMB.pays.monaie}" id="monaie"/>
+                                 
+                    <h:outputLabel value="Taux de convertion:"/>
+                    <h:inputText value="#{paysMB.pays.taux}" id="taux">   
+                        <f:convertNumber  integerOnly="false" maxFractionDigits="5" minFractionDigits="2" />
+                    </h:inputText>
+                   
+                </h:panelGrid>
+                <h:commandButton action="#{paysMB.ajouterPays()}" value="Ajouter" />
+            </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

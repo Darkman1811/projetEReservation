@@ -1,0 +1,14 @@
+EJBRemote/build/
+EJBRemote/dist/
+ESanteDAOLib/build/
+ESanteDAOLib/dist/
+ESanteUTILS/build/
+ESanteUTILS/dist/
+E-SanteClient/build/
+E-SanteClient/dist/
+E-reservation/build
+E-reservation/dist
+E-reservation/E-reservation-ejb/build
+E-reservation/E-reservation-ejb/dist
+E-reservation/E-reservation-war/build
+E-reservation/E-reservation-war/dist

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+         <ui:composition template="./dashborad.xhtml">
+            <ui:define name="content">
+               Pratiquant
+                                        
+        <f:view>  
+                    <h:link outcome="pratiquantAjout.xhtml" value="Ajouter Pratiquant"/>
+            <h:form>
+                
+                <h:dataTable value="#{pratiquantMB.listePratiquant}" var="pratiquant" > 
+                    <h:column >
+                        <f:facet name="header">Prenom Pratiquant</f:facet> 
+                        #{pratiquant.prenom}
+                    </h:column>
+                    
+                    <h:column >
+                        <f:facet name="header">Nom Pratiquant</f:facet> 
+                        #{pratiquant.nom}
+                    </h:column>
+                    
+                    <h:column >
+                        <f:facet name="header">Civilité</f:facet> 
+                        #{pratiquant.civilite}
+                    </h:column>
+                    
+                    <h:column >
+                        <f:facet name="header">Age</f:facet> 
+                        #{pratiquant.age}
+                    </h:column>
+                    
+                    <h:column >
+                        <f:facet name="header">Spécialité</f:facet> 
+                        #{pratiquant.specialite}
+                    </h:column>
+                    
+                    <h:column >
+                        <f:facet name="header">Titre</f:facet> 
+                        #{pratiquant.titre}
+                    </h:column>
+                    
+                     <h:column >
+                         <h:commandLink action="#{pratiquantMB.editerPratiquant()}" value="Modifier Pratiquant" >
+                             <f:param name="idPratiquant" value="#{pratiquant.id}"/>                             
+                         </h:commandLink>                      
+                    </h:column>
+                    
+                    <h:column >
+                        <h:commandLink action="#{pratiquantMB.supprimerPratiquant()}" value="Supprimer Pratiquant" >
+                             <f:param name="idPratiquant" value="#{pratiquant.id}"/>                             
+                        </h:commandLink>                      
+                    </h:column> 
+                    
+                </h:dataTable>  
+            </h:form>
+        </f:view>
+  
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
